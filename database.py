@@ -1,5 +1,6 @@
 from models import Book, User
 from colorama import Fore
+import json
 
 class db_admin:
     def __init__(self):
@@ -52,7 +53,7 @@ class db_admin:
         else:
             for user in self.users:
                 for book in user.borrowed_books:
-                    print(f"Title: {book.title}, Author: {book.author}, Year: {book.year}, Borrower: {user.name}, User ID: {user.id}")
+                    print(f"id: {book.id}, Title: {book.title}, Author: {book.author}, Year: {book.year}, Borrower: {user.name}, User ID: {user.id}")
     
     def show_available_books(self):
         available_books = []
@@ -77,3 +78,19 @@ class db_admin:
                 print(Fore.RED + "Book not borrowed.")
                 return
         print(Fore.RED + "User not found.")
+    
+    def save_data_json(self):
+        # I saved the data in a json file because I will integrate it with an API using fastapi
+        # and mongoDB
+        library_data = {
+            "Books": [book.dict() for book in self.books],
+            "Users": [user.dict() for user in self.users]
+        }
+
+        try:
+            with open("data.json", "w") as file:
+                json.dump(library_data, file, indent=4)
+        except IOError as e:
+            print(f"Error writing to file: {e}")
+        finally:
+            file.close()

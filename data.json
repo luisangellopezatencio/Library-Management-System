@@ -1,0 +1,156 @@
+{
+    "Books": [
+        {
+            "id": 1,
+            "title": "El Codigo da Vinci",
+            "author": "Dan Brown",
+            "year": 2003,
+            "borrowed": true
+        },
+        {
+            "id": 2,
+            "title": "Cien anos de soledad",
+            "author": "Gabriel Garcia Marquez",
+            "year": 1967,
+            "borrowed": true
+        },
+        {
+            "id": 3,
+            "title": "1984",
+            "author": "Mary Shelley",
+            "year": 1949,
+            "borrowed": false
+        },
+        {
+            "id": 4,
+            "title": "Frankenstein",
+            "author": "Mary Shelley",
+            "year": 1818,
+            "borrowed": true
+        },
+        {
+            "id": 5,
+            "title": "El Principito",
+            "author": "Antoine de Saint-Exupery",
+            "year": 1943,
+            "borrowed": true
+        },
+        {
+            "id": 6,
+            "title": "El diario de Ana Frank",
+            "author": "Ana Frank",
+            "year": 1948,
+            "borrowed": true
+        },
+        {
+            "id": 7,
+            "title": "Cien anos de soledad",
+            "author": "Gabriel Garcia Marquez",
+            "year": 1967,
+            "borrowed": true
+        },
+        {
+            "id": 8,
+            "title": "El Principito",
+            "author": "Antoine de Saint-Exupery",
+            "year": 1943,
+            "borrowed": true
+        }
+    ],
+    "Users": [
+        {
+            "id": 100,
+            "name": "Luis",
+            "borrowed_books": [
+                {
+                    "id": 2,
+                    "title": "Cien anos de soledad",
+                    "author": "Gabriel Garcia Marquez",
+                    "year": 1967,
+                    "borrowed": true
+                },
+                {
+                    "id": 8,
+                    "title": "El Principito",
+                    "author": "Antoine de Saint-Exupery",
+                    "year": 1943,
+                    "borrowed": true
+                }
+            ]
+        },
+        {
+            "id": 123,
+            "name": "Luna",
+            "borrowed_books": [
+                {
+                    "id": 7,
+                    "title": "Cien anos de soledad",
+                    "author": "Gabriel Garcia Marquez",
+                    "year": 1967,
+                    "borrowed": true
+                },
+                {
+                    "id": 4,
+                    "title": "Frankenstein",
+                    "author": "Mary Shelley",
+                    "year": 1818,
+                    "borrowed": true
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "name": "Alejandro",
+            "borrowed_books": [
+                {
+                    "id": 1,
+                    "title": "El Codigo da Vinci",
+                    "author": "Dan Brown",
+                    "year": 2003,
+                    "borrowed": true
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "name": "Sergio",
+            "borrowed_books": []
+        },
+        {
+            "id": 222,
+            "name": "Lenin",
+            "borrowed_books": [
+                {
+                    "id": 5,
+                    "title": "El Principito",
+                    "author": "Antoine de Saint-Exupery",
+                    "year": 1943,
+                    "borrowed": true
+                }
+            ]
+        },
+        {
+            "id": 333,
+            "name": "Ivan",
+            "borrowed_books": []
+        },
+        {
+            "id": 555,
+            "name": "Katia",
+            "borrowed_books": [
+                {
+                    "id": 6,
+                    "title": "El diario de Ana Frank",
+                    "author": "Ana Frank",
+                    "year": 1948,
+                    "borrowed": true
+                }
+            ]
+        },
+        {
+            "id": 444,
+            "name": "Valeria",
+            "borrowed_books": []
+        }
+    ]
+}

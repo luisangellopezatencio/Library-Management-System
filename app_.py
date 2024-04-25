@@ -113,24 +113,23 @@ class App:
         else:
             if user_input == 1:
                 self.add_book()
-                return True
             elif user_input == 2:
                 self.show_books()
-                return True
             elif user_input == 3:
                 self.add_user()
-                return True
             elif user_input == 4:
                 self.show_users()
-                return True
             elif user_input == 5:
                 self.borrow_book()
-                return True
             elif user_input == 6:
                 self.show_borrowed_books()
-                return True
             elif user_input == 7:
                 self.return_book()
-                return True
             elif user_input == 8:
-                return False
+                print("Saving database changes...")
+                db_admin.save_data_json()
+                print(Fore.GREEN + "Database saved successfully!" + Style.RESET_ALL)
+                print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
+                self.trigger = False
+            
+        return self.trigger

@@ -10,4 +10,4 @@ class Book(BaseModel):
 class User(BaseModel):
     id: int  # Date obligatory doe to is the DNI            
     name: str
-    borrowed_books: list = [] # if doesn't exist, it will be created as an empty list
+    borrowed_books: list[Book] = [] # if doesn't exist, it will be created as an empty list
