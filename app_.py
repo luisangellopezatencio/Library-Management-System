@@ -130,7 +130,7 @@ class App:
                 self.return_book()
             elif user_input == 8:
                 print("Saving database changes...")
-                #db_admin.save_data_json()
+                db_admin.save_data_json()
                 print(Fore.GREEN + "Database saved successfully!" + Style.RESET_ALL)
                 print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
                 self.trigger = False

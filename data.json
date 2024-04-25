@@ -63,13 +63,6 @@
             "name": "Luis",
             "borrowed_books": [
                 {
-                    "id": 2,
-                    "title": "Cien anos de soledad",
-                    "author": "Gabriel Garcia Marquez",
-                    "year": 1967,
-                    "borrowed": true
-                },
-                {
                     "id": 8,
                     "title": "El Principito",
                     "author": "Antoine de Saint-Exupery",
@@ -114,7 +107,15 @@
         {
             "id": 0,
             "name": "Sergio",
-            "borrowed_books": []
+            "borrowed_books": [
+                {
+                    "id": 2,
+                    "title": "Cien anos de soledad",
+                    "author": "Gabriel Garcia Marquez",
+                    "year": 1967,
+                    "borrowed": true
+                }
+            ]
         },
         {
             "id": 222,

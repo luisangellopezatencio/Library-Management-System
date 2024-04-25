@@ -1,6 +1,7 @@
 from models import Book, User
 from colorama import Fore
 import json
+from terminaltables import AsciiTable
 
 class db_admin:
     def __init__(self):
@@ -26,8 +27,11 @@ class db_admin:
         if len(self.books) == 0:
             print(Fore.RED + "No books found.")
         else:
+            table_data = [["id", "Title", "Author", "Year", "Borrowed"]]
             for book in self.books:
-                print(f"id: {book.id}, Title: {book.title}, Author: {book.author}, Year: {book.year}, Borrowed: {book.borrowed}")
+                table_data.append([book.id, book.title, book.author, book.year, book.borrowed])
+            table = AsciiTable(table_data, "Books")
+            print(table.table)
     
     def add_user(self, name: str, id_card: int):
         new_user = User(id=id_card, name=name)
@@ -38,8 +42,11 @@ class db_admin:
         if len(self.users) == 0:
             print(Fore.RED + "No users found.")
         else:
+            table_data = [["id", "Name"]]
             for user in self.users:
-                print(f"Name: {user.name}")
+                table_data.append([user.id, user.name])
+            table = AsciiTable(table_data, "Users")
+            print(table.table)
 
     def borrow_book(self, user_id: int, book_id: int):
         for user in self.users:
@@ -61,9 +68,12 @@ class db_admin:
         if len(self.users) == 0:
             print(Fore.RED + "No users found.")
         else:
+            table_data = [["id", "Title", "Author", "Year", "Borrower", "User ID"]]
             for user in self.users:
                 for book in user.borrowed_books:
-                    print(f"id: {book.id}, Title: {book.title}, Author: {book.author}, Year: {book.year}, Borrower: {user.name}, User ID: {user.id}")
+                    table_data.append([book.id, book.title, book.author, book.year, user.name, user.id])
+            table = AsciiTable(table_data, "Borrowed Books")
+            print(table.table)
     
     def show_available_books(self):
         available_books = []
@@ -73,8 +83,11 @@ class db_admin:
         if len(available_books) == 0:
             print(Fore.RED + "No available books.")
         else:
+            table_data = [["id", "Title", "Author", "Year"]]
             for book in available_books:
-                print(f"id: {book.id}, Title: {book.title}, Author: {book.author}, Year: {book.year}")
+                table_data.append([book.id, book.title, book.author, book.year])
+            table = AsciiTable(table_data, "Available Books")
+            print(table.table)
 
     def return_book(self, user_id: int, book_id: int):
         for user in self.users:
@@ -82,6 +95,9 @@ class db_admin:
                 for book in user.borrowed_books:
                     if book.id == book_id:
                         book.borrowed = False
+                        for book_ in self.books:
+                            if book_.id == book_id:
+                                book_.borrowed = False
                         user.borrowed_books.remove(book)
                         print(Fore.GREEN + "Book returned successfully!")
                         return
