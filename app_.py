@@ -10,7 +10,7 @@ db_admin = db_admin()
 
 class App:
     """
-    This is the main menu for the library management system
+    This is the logic for the library management system
     - show the options
     - get the user input
     - validate the user input
@@ -26,9 +26,9 @@ class App:
         print("""
         1. Add book
         2. Show books
-        3. Borrow book
-        4. Add user
-        5. Show users
+        3. Add user
+        4. Show users
+        5. Borrow book
         6. Show borrowed books
         7. Return book
         8. Exit
@@ -71,6 +71,32 @@ class App:
 
     def show_books(self):
         db_admin.show_books()
+    
+    def add_user(self):
+        name = input("Enter the name: ")
+        id_card = int(input("Enter the your number of identification(CC, NIE, DNI): "))
+        db_admin.add_user(name, id_card)
+    
+    def show_users(self):
+        db_admin.show_users()
+    
+    def borrow_book(self):
+        print("Showing available books:")
+        db_admin.show_available_books()
+        book_id = int(input("Enter the id of the book you want to borrow: "))
+        user_id = int(input("Enter the id of the user: "))
+        db_admin.borrow_book(user_id, book_id)
+
+    def show_borrowed_books(self):
+        print("Showing borrowed books:")
+        db_admin.show_borrowed_books()
+
+    def return_book(self):
+        print("Showing borrowed books:")
+        db_admin.show_borrowed_books()
+        book_id = int(input("Enter the id of the book you want to return: "))
+        user_id = int(input("Enter the id of the user: "))
+        db_admin.return_book(user_id, book_id)
 
     def execute_option(self, user_input: int, valid: bool) -> bool:
 
@@ -90,6 +116,21 @@ class App:
                 return True
             elif user_input == 2:
                 self.show_books()
+                return True
+            elif user_input == 3:
+                self.add_user()
+                return True
+            elif user_input == 4:
+                self.show_users()
+                return True
+            elif user_input == 5:
+                self.borrow_book()
+                return True
+            elif user_input == 6:
+                self.show_borrowed_books()
+                return True
+            elif user_input == 7:
+                self.return_book()
                 return True
             elif user_input == 8:
                 return False

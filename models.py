@@ -8,6 +8,6 @@ class Book(BaseModel):
     borrowed: bool = False
 
 class User(BaseModel):
-    id: int              # id is the personal document such as DNI, passport, etc
+    id: int  # Date obligatory doe to is the DNI            
     name: str
     borrowed_books: list = [] # if doesn't exist, it will be created as an empty list
