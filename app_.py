@@ -97,6 +97,9 @@ class App:
         book_id = int(input("Enter the id of the book you want to return: "))
         user_id = int(input("Enter the id of the user: "))
         db_admin.return_book(user_id, book_id)
+    
+    def load_data_json(self, path: str):
+        db_admin.load_data_json(path=path)
 
     def execute_option(self, user_input: int, valid: bool) -> bool:
 
@@ -127,7 +130,7 @@ class App:
                 self.return_book()
             elif user_input == 8:
                 print("Saving database changes...")
-                db_admin.save_data_json()
+                #db_admin.save_data_json()
                 print(Fore.GREEN + "Database saved successfully!" + Style.RESET_ALL)
                 print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
                 self.trigger = False

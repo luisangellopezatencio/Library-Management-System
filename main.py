@@ -3,6 +3,7 @@ from app_ import App
 
 trigger = True
 app = App(trigger=trigger)
+app.load_data_json(path="data.json")
 
 while trigger:
     app.Menu_show()

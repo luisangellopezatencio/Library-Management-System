@@ -6,6 +6,16 @@ class db_admin:
     def __init__(self):
         self.books = []
         self.users = []
+
+    def load_data_json(self, path: str = "data.json"):
+        try:
+            with open(path, "r") as file:
+                library_data = json.load(file)
+                self.books = [Book(**book) for book in library_data["Books"]]
+                self.users = [User(**user) for user in library_data["Users"]]
+            print(Fore.GREEN + "Data loaded successfully!")
+        except IOError as e:
+            print(f"{Fore.RED} Error reading from file: {e}")
     
     def add_book(self, title, author, year):
         new_book = Book(id=len(self.books) + 1, title=title, author=author, year=year)
