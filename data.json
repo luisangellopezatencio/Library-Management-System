@@ -19,14 +19,14 @@
             "title": "1984",
             "author": "George Orwell",
             "year": 1949,
-            "borrowed": false
+            "borrowed": true
         },
         {
             "id": 4,
             "title": "Frankenstein",
             "author": "Mary Shelley",
             "year": 1818,
-            "borrowed": true
+            "borrowed": false
         },
         {
             "id": 5,
@@ -54,6 +54,34 @@
             "title": "El Principito",
             "author": "Antoine de Saint-Exupery",
             "year": 1943,
+            "borrowed": false
+        },
+        {
+            "id": 9,
+            "title": "Cien a\u00f1os de soledad",
+            "author": "Gabriel Garcia Marquez",
+            "year": 1967,
+            "borrowed": false
+        },
+        {
+            "id": 10,
+            "title": "Cien a\u00f1os de Soledad",
+            "author": "Gabriel Garcia Marquez",
+            "year": 1967,
+            "borrowed": false
+        },
+        {
+            "id": 11,
+            "title": "Don Quijote de la Mancha",
+            "author": "Miguel de Cervantes",
+            "year": 1604,
+            "borrowed": false
+        },
+        {
+            "id": 12,
+            "title": "Don Quijote de la Mancha",
+            "author": "Miguel de Cervantes",
+            "year": 1604,
             "borrowed": true
         }
     ],
@@ -61,15 +89,7 @@
         {
             "id": 100,
             "name": "Luis",
-            "borrowed_books": [
-                {
-                    "id": 8,
-                    "title": "El Principito",
-                    "author": "Antoine de Saint-Exupery",
-                    "year": 1943,
-                    "borrowed": true
-                }
-            ]
+            "borrowed_books": []
         },
         {
             "id": 123,
@@ -80,13 +100,6 @@
                     "title": "Cien anos de soledad",
                     "author": "Gabriel Garcia Marquez",
                     "year": 1967,
-                    "borrowed": true
-                },
-                {
-                    "id": 4,
-                    "title": "Frankenstein",
-                    "author": "Mary Shelley",
-                    "year": 1818,
                     "borrowed": true
                 }
             ]
@@ -152,6 +165,32 @@
             "id": 444,
             "name": "Valeria",
             "borrowed_books": []
+        },
+        {
+            "id": 151,
+            "name": "Maria",
+            "borrowed_books": [
+                {
+                    "id": 3,
+                    "title": "1984",
+                    "author": "George Orwell",
+                    "year": 1949,
+                    "borrowed": true
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "name": "Luz",
+            "borrowed_books": [
+                {
+                    "id": 12,
+                    "title": "Don Quijote de la Mancha",
+                    "author": "Miguel de Cervantes",
+                    "year": 1604,
+                    "borrowed": true
+                }
+            ]
         }
     ]
 }

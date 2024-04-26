@@ -22,7 +22,6 @@ class App:
 
     def Menu_show(self):
 
-        print(Fore.MAGENTA + "Welcome to Library Management System")
         print("""
         1. Add book
         2. Show books
@@ -108,7 +107,7 @@ class App:
         through the trigger
         
         args: user_input: int, valid: bool
-        return: True if the option is valid else False
+        return: True if the loop should continue else False
         """
 
         if not valid:
@@ -129,6 +128,7 @@ class App:
             elif user_input == 7:
                 self.return_book()
             elif user_input == 8:
+                self.clear()
                 print("Saving database changes...")
                 db_admin.save_data_json()
                 print(Fore.GREEN + "Database saved successfully!" + Style.RESET_ALL)
