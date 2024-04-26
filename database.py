@@ -109,8 +109,8 @@ class db_admin:
         # I saved the data in a json file because I will integrate it with an API using fastapi
         # and mongoDB
         library_data = {
-            "Books": [book.dict() for book in self.books],
-            "Users": [user.dict() for user in self.users]
+            "Books": [book.model_dump() for book in self.books],
+            "Users": [user.model_dump() for user in self.users]
         }
 
         try:
